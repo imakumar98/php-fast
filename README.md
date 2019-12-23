@@ -1,5 +1,5 @@
 # PHP Fast
-PHP Fast is a mini framework use to APIs in days.
+PHP Fast is a mini framework use to create APIs in days.
 
 ## Folder Structure
 PHP Fast provides very easy and simple folder structure to work with, where you will have all basic necessary functions.
