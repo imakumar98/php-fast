@@ -30,7 +30,11 @@ DEFINE('TIMEZONE', 'Asia/Kolkata');
 
 
 //Defines Salt to generate hashed password
-DEFINE('PASSWORD_HASHING_SALT', 'thisissecret')
+DEFINE('PASSWORD_HASHING_SALT', 'thisissecret');
+
+
+//Define Developer mail address to receive errors
+DEFINE('DEVELOPER_MAIL_ADDRESS', 'imakumar98@gmail.com');
 
 
 ?>

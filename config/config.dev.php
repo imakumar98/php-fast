@@ -6,15 +6,15 @@
 
 
 //Define host of your application
-DEFINE('DB_HOST', '');
+DEFINE('DB_HOST', 'localhost');
 
 
 //Define database name of your application
-DEFINE('DB_NAME', '');
+DEFINE('DB_NAME', 'php_fast');
 
 
 //Define username of your application database
-DEFINE('DB_USER', '');
+DEFINE('DB_USER', 'root');
 
 
 //Define password of your application database
