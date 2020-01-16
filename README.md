@@ -1,5 +1,6 @@
 # PHP Fast
-PHP Fast is a mini framework use to create APIs in days.
+PHP Fast is a mini framework use to create REST APIs in hours.
+
 
 
 ## Folder Structure
@@ -28,6 +29,7 @@ PHP Fast provides very easy and simple folder structure to work with, where you 
 - setup.php
 
 
+
 ## Covers below endpoints
 
 Example : Lets take an example of entity like `Student`
@@ -37,6 +39,7 @@ Example : Lets take an example of entity like `Student`
 3. /student         : POST      Save student
 4. /student/:id     : DELETE    Delete student by ID
 5. /student/:id     : PUT       Update student by ID
+
 
 
 ## Define Models
