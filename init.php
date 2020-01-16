@@ -23,6 +23,10 @@ require_once('app/predefined/Request.php');
 require_once('app/predefined/Response.php');
 
 
+//Import Model structure
+require_once('models.php');
+
+
 
 
 

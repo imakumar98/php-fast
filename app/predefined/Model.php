@@ -34,6 +34,28 @@ class Model extends Database {
 
     }
 
+    //Function to save record
+    public static function save_v2($entity, $hashmap) {
+
+        $connection = self::get_connection();
+
+        $key_values = self::hashmap_to_string($hashmap);
+
+        $sql = "INSERT INTO $entity ($key_values[0]) VALUES ($key_values[1])";
+
+        $result = mysqli_query($connection, $sql);
+
+        if(!$result) return die("Query Failed. Error : ". mysqli_error($connection));
+
+        $inserted_id = mysqli_insert_id($connection);
+
+        $record = self::find_by_id_v2($entity, $inserted_id);
+
+        return $record;
+
+
+    }
+
     //Returns string of `,` sepatated keys & values by hashmap as parameter
     public static function hashmap_to_string($hashmap){
 
@@ -105,6 +127,27 @@ class Model extends Database {
 
 
     }
+
+    //Returns single record by ID
+    public static function find_by_id_v2($entity, $id) {
+
+        $id = self::escaped_string($id);
+
+        $sql = "SELECT * FROM $entity WHERE id = '$id' LIMIT 1";
+
+        $result = self::query_result_array($sql);
+
+        if(empty($result)) {
+            return array();
+        }
+
+        return $result[0];
+
+
+    }
+
+
+  
 
 
 
