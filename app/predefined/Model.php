@@ -56,6 +56,27 @@ class Model extends Database {
     }
 
 
+    //Returns single record by ID
+    public static function find_by_id($id) {
+
+        $id = self::escaped_string($id);
+
+        $table = self::get_table_name();
+
+        $sql = "SELECT * FROM $table WHERE id = '$id' LIMIT 1";
+
+        $result = self::query_result_array($sql);
+
+        if(empty($result)) {
+            return array();
+        }
+
+        return $result[0];
+
+
+    }
+
+
 
 }
 

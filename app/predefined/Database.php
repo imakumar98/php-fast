@@ -60,6 +60,15 @@ class Database {
     
     }
 
+    //Return escaped string
+    public static function escaped_string($string) {
+
+        $connection = self::get_connection();
+
+        return trim(mysqli_real_escape_string($connection, $string));
+
+    }
+
 
 }
 
