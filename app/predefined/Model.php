@@ -7,10 +7,6 @@
  */
 
 
-//Import Database Class for database operations use by Model class
-require_once('Database.php');
-
-
 class Model extends Database {
 
     
@@ -42,6 +38,20 @@ class Model extends Database {
         $class = get_called_class();
 
         return strtolower($class);
+
+    }
+
+
+    //Returns all records
+    public static function all() {
+
+        $table = self::get_table_name();
+
+        $sql = "SELECT * from $table";
+
+        $result = self::query_result_array($sql);
+
+        return $result;
 
     }
 

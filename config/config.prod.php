@@ -21,10 +21,4 @@ DEFINE('DB_USER', 'hhwogeqz_henry');
 DEFINE('DB_PASS','harvin#456');
 
 
-//Set error reporting true
-error_reporting(E_ALL);
-
-
-
-
 ?>

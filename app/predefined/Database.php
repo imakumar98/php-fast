@@ -8,7 +8,7 @@
 
 
 //Import configuration file
-require_once($_SERVER['DOCUMENT_ROOT'].'/php-fast'.'/config/config.php');
+// require_once($_SERVER['DOCUMENT_ROOT'].'/php-fast'.'/config/config.php');
 
 
 

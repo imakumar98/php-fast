@@ -6,7 +6,7 @@
 
 
 //Define host of your application
-DEFINE('DB_HOST', 'localhost');
+DEFINE('HOST', 'localhost');
 
 
 //Define database name of your application
