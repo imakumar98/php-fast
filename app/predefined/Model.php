@@ -158,6 +158,29 @@ class Model extends Database {
 
     }
 
+    //Delete record
+    public static function delete_v2($entity, $id) {
+
+        $id = self::escaped_string($id);
+
+        $sql = "DELETE FROM $entity WHERE id = '$id'";
+
+        $result = self::query($sql);
+
+        if(!$result) {
+
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+
+    //Return boolean, if record exist
+    
+
 
   
 

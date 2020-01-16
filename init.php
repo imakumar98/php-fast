@@ -14,10 +14,6 @@ require_once('app/predefined/Database.php');
 
 require_once('app/predefined/Model.php');
 
-
-require_once('app/userdefined/Student.php');
-
-
 require_once('app/predefined/Request.php');
 
 require_once('app/predefined/Response.php');

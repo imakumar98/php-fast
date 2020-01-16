@@ -11,6 +11,8 @@
 
 require_once('models.php');
 
+echo "Setup file";
+
 
 
 

@@ -53,15 +53,56 @@
 
 
 
-    
-    if(preg_match("/api\/student\/\d+/", $_REQUEST['url']) && $_SERVER['REQUEST_METHOD']=='GET') {
+    //General Endpoint to Delete Record
+    if(preg_match("/api\/(.*)\/\d+/", $_REQUEST['url']) && $_SERVER['REQUEST_METHOD']=='DELETE') {
 
+        //1. Get Entity name
+        preg_match('/api\/(.*)/', $_REQUEST['url'], $match);
+
+        $entity = explode("/", $match[0])[1];
+
+
+        //2. Validate Entity
+        if(!isset($models[$entity])) {
+
+            Response::error(400,'Invalid Endpoint!');
+
+            return;
+
+        }
+
+
+        //3. Get Record ID
         preg_match('/\d+/', $_REQUEST['url'], $match);
+        
         $id = $match[0];
 
-        $record = Student::find_by_id($id);
 
-        Response::json(200, $data = $record, 'Request Accepted');
+
+        //4. Is Record Exist
+
+
+
+        //5. Delete record
+        $is_deleted = Model::delete_v2($entity, $id);
+
+        if($is_deleted) {
+
+            Response::json(200, "Record deleted for ID: $id");
+
+        }else {
+
+            Response::error(400, "Record deletion failed!");
+
+
+        }
+
+
+
+
+
+
+
 
     }
 
