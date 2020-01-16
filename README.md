@@ -29,3 +29,18 @@ Example : Lets take an example of entity like `Student`
 4. /student/:id     : DELETE    Delete student by ID
 5. /student/:id     : PUT       Update student by ID
 
+
+## Define Models
+We are using PHP associative arrays to define model
+
+Example : Define Student Model
+
+Define field in this format
+`field | type | is_required`
+
+`$models['student'] = array(
+  array('name', 'string', true)
+);`
+
+
+
