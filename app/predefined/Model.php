@@ -108,6 +108,18 @@ class Model extends Database {
     }
 
 
+    //Returns all records
+    public static function all_v2($entity) {
+
+        $sql = "SELECT * from $entity";
+
+        $result = self::query_result_array($sql);
+
+        return $result;
+
+    }
+
+
     //Returns single record by ID
     public static function find_by_id($id) {
 
