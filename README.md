@@ -15,8 +15,17 @@ PHP Fast provides very easy and simple folder structure to work with, where you 
   - predefined
     - Database.php
     - Model.php
+    - Request.php
+    - Response.php
+    - Service.php
     - Validate.php
   - user-defined
+- .htaccess
+- index.php
+- init.php
+- models.php
+- README.md
+- setup.php
 
 
 ## Covers below endpoints
