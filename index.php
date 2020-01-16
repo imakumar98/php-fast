@@ -43,9 +43,26 @@
     //Endpoint to save entity
     if($_REQUEST['url']=='api/student' && $_SERVER['REQUEST_METHOD']=='POST') {
 
-       $name = Request::body('name');
+        $name = Request::body('name');
 
-        Response::json(201, $data = $_POST, 'Request Accepted');
+        $age = Request::body('age');
+
+        $student = Student::save(array(
+            "name" => $name,
+            "age" => $age
+        ));
+
+        if($student) {
+
+            Response::json(201, $data = $student, 'Student saved');
+
+        } else {
+
+            Response::json(500, $data = $student, 'Student not saved');
+
+        }
+
+        
 
     }
 

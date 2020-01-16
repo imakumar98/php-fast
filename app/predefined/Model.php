@@ -10,7 +10,10 @@
 class Model extends Database {
 
     
+    //Function to save record
     public static function save($hashmap) {
+
+        $connection = self::get_connection();
 
         $table = self::get_table_name();
 
@@ -18,7 +21,7 @@ class Model extends Database {
 
         $sql = "INSERT INTO $table ($key_values[0]) VALUES ($key_values[1])";
 
-        $result = query($sql);
+        $result = mysqli_query($connection, $sql);
 
         if(!$result) return die("Query Failed. Error : ". mysqli_error($connection));
 
@@ -28,6 +31,33 @@ class Model extends Database {
 
         return $record;
 
+
+    }
+
+    //Returns string of `,` sepatated keys & values by hashmap as parameter
+    public static function hashmap_to_string($hashmap){
+
+        $keys = ''; $values = ''; $column_count = count($hashmap); $i = 0;
+
+        foreach($hashmap as $key=>$value){
+
+            if(($i+1)==$column_count) {
+
+                $keys.= $key; $values.= "'".$value."'";
+                
+            }else {
+
+                $keys.= $key.','; $values.= "'".$value."'".",";
+
+            } 
+                
+            $i++;
+
+        }
+
+        $key_values = array($keys, $values);
+
+        return $key_values;
 
     }
 
