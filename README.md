@@ -19,7 +19,7 @@ PHP Fast provides very easy and simple folder structure to work with, where you 
   - user-defined
 
 
-## Convers below endpoints
+## Covers below endpoints
 
 Example : Lets take an example of entity like `Student`
 
