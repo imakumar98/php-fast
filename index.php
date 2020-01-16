@@ -1,8 +1,11 @@
 <?php
 
+    //Import functions
+    require_once('app/predefined/Response.php');
+
 
     if($_REQUEST['url']=='' && $_SERVER['REQUEST_METHOD']=='GET') {
-        echo "Welcome to PHP Fast";
+        Response::render('home');
     }
 
 
@@ -13,14 +16,12 @@
 
     if($_REQUEST['url']=='api/students' && $_SERVER['REQUEST_METHOD']=='GET') {
 
-        $result = array();
-
-        $result['data'] = array(
+        $data = array(
             "name" => "Ashwani",
-            "age" => 20
+            "age" => 10
         );
 
-        echo json_encode($result);
+        Response::json(200, $data, 'OK');
 
     }
  
