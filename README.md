@@ -25,8 +25,7 @@ PHP Fast provides very easy and simple folder structure to work with, where you 
 - index.php
 - init.php
 - models.php
-- README.md
-- setup.php
+- setup.php               
 
 
 
@@ -54,5 +53,11 @@ Define field in this format
   array('name', 'string', true)
 );`
 
+
+
+## To Be Implemented
+1. Validation
+2. Foreign Key Constraint
+3. Authentication JWT
 
 
