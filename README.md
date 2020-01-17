@@ -1,5 +1,5 @@
 # PHP Fast
-PHP Fast is a mini framework use to create REST APIs in hours.
+PHP Fast is a mini framework use to create REST APIs in minutes.
 
 
 
